@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6e7455cbd0.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="videostyle.css">
+    <title>Document</title>
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+    <navbar>
+        <div class="logo">
+            < edu plat>
+        </div>
+        <div class="back">
+            <a href="/gunsang/index.html">홈으로</a>
+        </div>
+    </navbar>
+    <section>
+        <div class="leftsection">
+            <div class="video">
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/TixEGCP1KjI"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="leftmiddle">
+                <p>영화관 키오스크 사용법</p>
+                <i class="fa-solid fa-star" onclick="star()"></i>
+            </div>
+            <div class="link">
+                <a href="https://youtu.be/TixEGCP1KjI">https://youtu.be/TixEGCP1KjI</a>
+            </div>
+            <div class="comment">
+                <input type="text" placeholder="댓글추가" class="commentinput">
+                <button class="check" onclick="comment()">확인</button>
+                <button class="cancle" onclick="commentcancle()">취소</button>
+                <ul class="commentul">
+
+                </ul>
+            </div>
+        </div>
+        <div class="rightsection">
+            <p>요약설명:</p>
+            <p>1:</p>
+            <p>2: </p>
+            <p>3: </p>
+            <p>4: </p>
+            <p>5: </p>
+            <p>6: </p>
+            <p>7: </p>
+        </div>
+    </section>
+</body>
+<script>
+    function star() {
+        const star = document.querySelector(".fa-star");
+        star.style.color = "rgb(244, 199, 65)";
+
+    }
+    function comment() {
+        let commentinp = document.querySelector(".commentinput");
+        let commentul1 = document.querySelector(".commentul");
+        let commentli = document.createElement("li");
+        let name = document.createElement("h6")
+        let gunsang = "이건상님의 댓글";
+
+        let x = document.createElement("i");
+        x.className = "fa-solid fa-xmark";
+        if (commentinp.value == " ") {
+            alert("입력칸이 비었습니다");
+        }
+        else if (commentinp.value == "") {
+            alert("입력칸이 비었습니다");
+        }
+        else {
+            name.innertext = gunsang;
+            commentul1.appendChild(name);
+            commentli.innerText = commentinp.value;
+            commentul1.appendChild(commentli);
+            commentli.appendChild(x);
+
+            commentinp.value = "";
+            commentinp.focus();
+
+        }
+        x.onclick = function (e) {
+            let pnode = e.target.parentNode;
+            commentul1.removeChild(pnode);
+        }
+    }
+    function commentcancle() {
+        let commentinp = document.querySelector(".commentinput");
+        commentinp.value = " ";
+        commentinp.focus();
+    }
+</script>
+
+</html>

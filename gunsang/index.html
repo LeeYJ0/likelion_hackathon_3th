@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/6e7455cbd0.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+        body {
+            width: 1550px;
+            
+            margin: 0 auto;
+            padding-top: 20px;
+            background-image: url('/gunsang/picture/webback.jpg');
+            background-size: 120%;
+
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .topnav {
+            width: 95%;
+            display: flex;
+            font-size: 15px;
+            justify-content: end;
+
+        }
+
+        .topnav button {
+            text-decoration: none;
+            margin-right: 13px;
+            color: black;
+            background: none;
+            border: none;
+
+        }
+        
+
+        section {
+            text-align: center;
+            position: relative;
+            width: 100%;
+        }
+
+        .mainlogo {
+            color: #010000;
+            text-align: center;
+            font-family: Inter;
+            font-size: 75px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        .seconlogo {
+            color: #000;
+            text-align: center;
+            font-family: Inter;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: normal;
+            margin: 35px;
+        }
+
+        .mainsearchdiv {
+            margin-left: 50px;
+        }
+
+        .mainsearch {
+            width: 450px;
+            height: 50px;
+            border-radius: 110px;
+            border: 3px solid #000;
+            background: #eadede;
+            text-indent: 30px;
+            margin-top: 30px;
+        }
+
+        .mainsearchdiv>button {
+            border: 0;
+            background: none;
+        }
+
+        .mainbtn {
+            margin: 20px;
+        }
+
+        .mainbtn button {
+            margin: 15px;
+            background: rgba(255, 160, 122, 0.5);
+            border: 2px solid black;
+            border-radius: 20px;
+            width: 80px;
+            height: 40px;
+            color: #FFF;
+            font-weight: 700;
+
+        }
+
+        .fa-solid {
+            font-size: 20px;
+        }
+
+        .thirdlogo {
+            color: #000;
+            text-align: center;
+            font-family: Inter;
+            font-size: 30px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: normal;
+            margin: 35px;
+        }
+
+        .middlesection {
+            width: 100%;
+            height: 451px;
+            margin: 0;
+            margin-bottom: 30px;
+
+        }
+
+
+        .middlesection img {
+            height: 400px;
+            width: 250px;
+            box-shadow: 20px 20px 50px rgb(0, 0, 0);
+            border-radius: 30px;
+            margin: 30px;
+           
+        }
+
+        .middlesection img:hover {
+            transform: translateY(-15px);
+            transition: all 0.3s;
+        }
+
+    
+
+        .myinfo {
+            display: none;
+        }
+
+        .loginbox {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            left: 300px;
+            top: 100px;
+            background: #ffffff;
+            position: absolute;
+            width: 60%;
+            height: 80%;
+
+
+        }
+
+        .loginbox input {
+            width: 300px;
+            height: 50px;
+            background: #F5F5F5;
+            border: 0;
+        }
+
+        .loginbox .loginbtn {
+            height: 50px;
+            width: 190px;
+            margin-right: 10px;
+            background-color: #4789E7;
+            border: none;
+            border-radius: 50px;
+            color: #FFF;
+            font-weight: 700;
+
+
+        }
+
+        .loginbox .newloginbtn1 {
+            height: 50px;
+            width: 90px;
+            background-color: #EE445F;
+            margin-left: 10px;
+            border: none;
+            border-radius: 50px;
+            color: #FFF;
+            font-weight: 700;
+        }
+
+        .loginbox>div {
+            padding: 15px;
+        }
+
+        .login {
+            display: none;
+            
+        }
+
+        .newloginbox {
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            left: 300px;
+            top: 100px;
+            background: #ffffff;
+            position: absolute;
+            width: 60%;
+            height: 80%;
+
+
+        }
+
+        .newloginbox input {
+            width: 300px;
+            height: 50px;
+            background: #F5F5F5;
+            border: 0;
+        }
+
+        .newloginbox .newloginbtn2 {
+            height: 50px;
+            width: 300px;
+            margin-right: 10px;
+            background-color: #4789E7;
+            border: none;
+            border-radius: 50px;
+            color: #FFF;
+            font-weight: 700;
+
+
+        }
+
+        .norepassword {
+            
+            width: 300px;
+            font-size: 10px;
+            color: red;
+            display: none;
+            margin: 0 auto;
+            text-align: left;
+
+        }
+        .newloginbox>div {
+            padding: 15px;
+        }
+        
+
+        .newlogin {
+            display: none;
+        }
+
+        .repasswordbox {
+            position: relative;
+        }
+
+        
+
+        .middlesectionmodal {
+            display: flex;
+            width: 100%;
+            height: 451px;
+            top: 47%;
+            position: absolute;
+            justify-content: center;
+            z-index: -1;
+
+        }
+
+        .middlesectionmodal>div {
+            height: 400px;
+            width: 250px;
+            background-color: white;
+            border-radius: 30px;
+            margin: 33px;
+
+        }
+
+        .middlesectionmodal li {
+            list-style: none;
+
+        }
+
+        /*하단 css 영찬님꺼 */
+        .info_section {
+            background-color: #171717;
+            color: #ffffff;
+            padding: 90px 0 45px 0;
+        }
+
+        .info_section h5 {
+            margin-bottom: 35px;
+            font-size: 22px;
+        }
+
+        .info_section .info_contact .info_logo a {
+            position: relative;
+        }
+
+        .info_section .info_contact .info_logo a span {
+            color: #ffffff;
+            font-size: 26px;
+            font-weight: bold;
+            position: relative;
+            z-index: 3;
+        }
+
+        .info_section .info_contact .info_logo a::before {
+            content: "";
+            position: absolute;
+            left: -15px;
+            bottom: 0;
+            width: 60px;
+            height: 55px;
+            background-color: orangered;
+            z-index: 2;
+        }
+
+        .info_section .info_contact .img-box {
+            width: 35px;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .info_section .info_contact p {
+            margin: 0;
+        }
+
+        .info_section .info_contact>div {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .info_section .info_contact>div img {
+            height: auto;
+            margin-right: 12px;
+        }
+
+        .info_section .info_links ul {
+            padding: 0;
+        }
+
+        .info_section .info_links ul li {
+            list-style-type: none;
+        }
+
+        .info_section .info_links ul li a {
+            display: inline-block;
+            color: #ffffff;
+            margin: 2px 0;
+        }
+
+        .info_section .info_form form input {
+            outline: none;
+            width: 100%;
+            padding: 7px 10px;
+            border: 1px solid #ffffff;
+            background-color: transparent;
+            color: #ffffff;
+        }
+
+        .info_section .info_form form input::-webkit-input-placeholder {
+            color: #ffffff;
+        }
+
+        .info_section .info_form form input:-ms-input-placeholder {
+            color: #ffffff;
+        }
+
+        .info_section .info_form form input::-ms-input-placeholder {
+            color: #ffffff;
+        }
+
+        .info_section .info_form form input::placeholder {
+            color: #ffffff;
+        }
+
+        .info_section .info_form form button {
+            display: inline-block;
+            padding: 8px 35px;
+            background-color: orangered;
+            border: 1px solid orangered;
+            color: #ffffff;
+            border-radius: 0;
+            -webkit-transition: -webkit-transform 0.3s;
+            transition: -webkit-transform 0.3s;
+            transition: transform 0.3s;
+            transition: transform 0.3s, -webkit-transform 0.3s;
+            margin-top: 15px;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        .info_section .info_form form button:hover {
+            -webkit-transform: translateY(-3px);
+            transform: translateY(-3px);
+            -webkit-box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.2);
+        }
+        .row{
+            display: flex;
+            justify-content: center;
+        }
+        .row > div{
+            margin: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <navbar>
+        <div class="topnav">
+
+            <button class="toplogin" onclick="login()">로그인</button>
+
+
+            <button class="topnewlogin" onclick="newlogin()">회원가입</button>
+
+
+
+
+        </div>
+
+    </navbar>
+    <section>
+
+        <div class="mainlogo">
+            < edu plat>
+        </div>
+        <div class="seconlogo">
+            일상생활의 불편함을 줄여 줄 교육 플렛폼
+        </div>
+        <div class="mainsearchdiv">
+            <input type="text" class="mainsearch" placeholder="찾으실 항목을 입력하세요">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="mainbtn">
+            <a href=""><button class="shop">상점</button></a>
+            <a href=""><button class="qna">Q&A</button></a>
+            <a href="myinfo.html"><button class="favorite">즐겨찾기</button></a>
+        </div>
+        <div class="thirdlogo">
+            무슨 기능이 필요하신가요?
+        </div>
+        <div class="middlesection">
+
+            <a href="/gunsang/list/smartphone.html"><img src="/gunsang/picture/스마트폰.jpg" alt="" class="mainimg1"></a>
+
+
+            <a href="/gunsang/list/keyowsk.html"><img src="/gunsang/picture/키오스크.png" alt="" class="mainimg2"></a>
+
+
+            <a href="/gunsang/list/ticket.html"><img src="/gunsang/picture/영화.jpg" alt="" class="mainimg3"></a>
+
+            <a href="/gunsang/list/wifi.html"><img src="/gunsang/picture/와이파이.jpg" alt="" class="mainimg3"></a>
+        </div>
+
+        </div>
+        <div class="login">
+            <div class="loginbox">
+                <div style="font-size: 40px; position: absolute; top: 110px; left: 280px;">
+                    로그인
+                </div>
+                <div style="margin: 0; position: absolute; top: 20px; right: 20px;">
+                    <i class="fa-solid fa-xmark" onclick="loginclose()"></i>
+                </div>
+                <div>
+                    <input type="text" class="id" placeholder="아이디">
+                </div>
+                <div>
+                    <input type="password" class="password" placeholder="비밀번호">
+                </div>
+                <div class="logbtn">
+                    <button class="loginbtn" onclick="logindone()">로그인</button>
+                    <button class="newloginbtn1" onclick="newlogin()">회원가입</button>
+                </div>
+            </div>
+        </div>
+        <div class="newlogin">
+            <div class="newloginbox">
+                <div style="font-size: 40px; position: absolute; top: 30px; left: 280px;">
+                    회원가입
+                </div>
+                <div style="margin: 0; position: absolute; top: 20px; right: 20px;">
+                    <i class="fa-solid fa-xmark" onclick="newloginclose()"></i>
+                </div>
+                <div>
+                    <input type="text" class="newloginid" placeholder="아이디" required>
+                </div>
+                <div>
+                    <input type="password" class="pass" placeholder="비밀번호" required>
+                </div>
+                <div class="repasswordbox">
+                    <input type="password" class="repass" placeholder="비밀번호확인" required>
+
+                </div>
+                <div class="norepassword" style="padding : 0px"> 비밀번호가 일치하지 않습니다</div>
+                <div>
+                    <input type="text" class="name" placeholder="이름" required>
+                </div>
+                <div class="newlogbtn">
+                    <button class="newloginbtn2" onclick="repassword()">회원가입</button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="info_section layout_padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="info_contact">
+                        <div class="info_logo">
+                            <a href="index.html">
+                                <span>
+                                    eduplat
+                                </span>
+                            </a>
+                        </div>
+                        <h5>
+                            Contact Us
+                        </h5>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/location.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                Page when looking at its layou
+                            </p>
+                        </div>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/phone.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                +01 1234567890
+                            </p>
+                        </div>
+                        <div>
+                            <div class="img-box">
+                                <img src="images/envelope.png" width="18px" alt="" />
+                            </div>
+                            <p>
+                                likelion@gmail.com
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_info">
+                        <h5>
+                            Invest Money
+                        </h5>
+                        <p>
+                            There are many variations of <br>
+                            passages of Lorem Ipsum <br> 
+                            available, but the majority have <br>
+                            suffered alteration <br>
+                            in some form, by injected humour,
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="info_links">
+                        <h5>
+                            Useful Links
+                        </h5>
+                        <ul>
+                            <li>
+                                <a href="">
+                                    There are many
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    variations of
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    passages of
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Lorem Ipsum
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    available, but the
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    majority have
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    suffered
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="info_form ">
+                        <h5>
+                            Newsletter
+                        </h5>
+                        <form action="">
+                            <input type="email" placeholder="Enter your email" />
+                            <button>
+                                Subscribe
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+
+
+
+    const login1 = document.querySelector(".login");
+
+    const password1 = document.querySelector(".pass");
+    const repassword1 = document.querySelector(".repass");
+    const norepass = document.querySelector(".norepassword");
+    const id1 = document.querySelector(".newloginid");
+    const name1 = document.querySelector(".name");
+
+    const newlogin1 = document.querySelector(".newlogin");
+
+
+    function login() {
+        login1.style.display = "block";
+        
+    }
+    function newlogin() {
+        newlogin1.style.display = "block";
+        login1.style.display = "none";
+
+    }
+    function loginclose() {
+        login1.style.display = "none";
+        
+
+    }
+    function newloginclose() {
+
+        newlogin1.style.display = "none";
+        norepass.style.display = "none";
+        password1.value = "";
+        repassword1.value = "";
+        id1.value = "";
+        name1.value = "";
+    }
+    function logindone() {
+        alert("로그인 완료");
+        login1.style.display = "none";
+
+
+    }
+    function repassword() {
+
+
+        if (password1.value === repassword1.value) {
+            alert("회원가입이 완료 되었습니다.");
+            newlogin1.style.display = "none";
+            password1.value = "";
+            repassword1.value = "";
+            id1.value = "";
+            name1.value = "";
+        }
+        else {
+            norepass.style.display = "block";
+
+        }
+    }
+</script>
+
+</html>
